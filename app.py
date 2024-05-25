@@ -1,3 +1,5 @@
+import time
+
 test_arr = [1, 5, 3, 2, 4, 6, 8, 7, 9, 0]
 
 
@@ -10,4 +12,31 @@ def bubble_sort(arr):
     return arr
 
 
-print(bubble_sort(test_arr))
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min]:
+                min = j
+        arr[i], arr[min] = arr[min], arr[i]
+    return arr
+
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j >= 0 and key < arr[j]:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = key
+    return arr
+
+
+# 1. record current time and store it in a variable. With the time function.
+# 2. copy test_arr list to make sure the original list is not mutated.
+# 3. call bubble_sort function and store the result in a variable.
+# 4. subtract the current time from the time recorded in step 1 to get the time taken to sort the list.
+start_time = time.time()
+bubble_sort(test_arr.copy())
+bubble_sort_time = time.time() - start_time
