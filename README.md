@@ -1,6 +1,6 @@
-### Basic sorting algorithms
+### Basic sorting algorithms 🧮
 
-## Table of Contents
+#### Table of Contents
 
 - [Basic sorting algorithms](#basic-sorting-algorithms)
   - [Creating a virtual environment](#creating-a-virtual-environment)
@@ -10,6 +10,8 @@
   - [Running the tests](#running-the-tests)
 
 ### Creating a virtual environment
+
+---
 
 I recommend using venv to run the code. To create a virtual environment, run the following command in the terminal:
 
@@ -27,6 +29,8 @@ python3 -m venv venv
 
 ### Activating the virtual environment
 
+---
+
 To activate the virtual environment, run the following command in the terminal:
 
 for windows:
@@ -35,7 +39,7 @@ for windows:
 venv\Scripts\activate
 ```
 
-for macOS and Linux:
+for macOS and Linux: 🖥️
 
 ```bash
 source venv/bin/activate
@@ -49,16 +53,20 @@ pip install -r requirements.txt
 
 ### Generating requirements.txt
 
-This is more of a reference for myself.
+---
+
+_This is more of a reference for myself._
 
 ```bash
 pip freeze > requirements.txt
 ```
 
-This command will create a requirements.txt file with all the packages installed in the virtual environment automatically.
+### Running the tests 🧪
 
-### Running the tests
+---
 
-    ```bash
-    pytest
-    ```
+To run the tests, run the following command in the terminal:
+
+```bash
+pytest
+```
