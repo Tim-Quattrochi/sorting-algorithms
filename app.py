@@ -17,13 +17,18 @@ def bubble_sort(arr):
 
 
 def selection_sort(arr):
+    comparisons = 0
+    swaps = 0
     for i in range(len(arr)):
         min = i
         for j in range(i+1, len(arr)):
+            comparisons += 1
             if arr[j] < arr[min]:
                 min = j
-        arr[i], arr[min] = arr[min], arr[i]
-    return arr
+        if min != i:
+            arr[i], arr[min] = arr[min], arr[i]
+            swaps += 1
+    return arr, comparisons, swaps
 
 
 def insertion_sort(arr):
