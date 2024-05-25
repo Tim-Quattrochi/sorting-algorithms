@@ -32,14 +32,18 @@ def selection_sort(arr):
 
 
 def insertion_sort(arr):
+    comparisons = 0
+    swaps = 0
     for i in range(1, len(arr)):
         key = arr[i]
         j = i-1
         while j >= 0 and key < arr[j]:
             arr[j+1] = arr[j]
             j -= 1
+            comparisons += 1
+            swaps += 1
         arr[j+1] = key
-    return arr
+    return arr, comparisons, swaps
 
 
 # 1. record current time and store it in a variable. With the time function.
