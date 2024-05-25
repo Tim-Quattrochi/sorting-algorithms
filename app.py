@@ -5,11 +5,15 @@ test_arr = [1, 5, 3, 2, 4, 6, 8, 7, 9, 0]
 
 def bubble_sort(arr):
     n = len(arr)
+    comparisons = 0
+    swaps = 0
     for i in range(n):
         for j in range(0, n-i-1):
+            comparisons += 1
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
+                swaps += 1
+    return arr, comparisons, swaps
 
 
 def selection_sort(arr):
@@ -40,3 +44,17 @@ def insertion_sort(arr):
 start_time = time.time()
 bubble_sort(test_arr.copy())
 bubble_sort_time = time.time() - start_time
+
+
+start_time = time.time()
+selection_sort(test_arr.copy())
+selection_sort_time = time.time() - start_time
+
+
+start_time = time.time()
+insertion_sort(test_arr.copy())
+insertion_sort_time = time.time() - start_time
+
+print(f"[Bubble Sort]: {bubble_sort_time} seconds")
+print(f"[Selection Sort]: {selection_sort_time} seconds")
+print(f"[Insertion Sort]: {insertion_sort_time} seconds")
